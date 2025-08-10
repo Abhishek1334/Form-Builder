@@ -1,7 +1,4 @@
 {
-    "buildCommand": "cd client && npm run vercel-build",
-    "outputDirectory": "client/dist",
-    "installCommand": "cd client && npm install",
     "framework": "vite",
     "env": {
         "VITE_BASE_URL": "https://your-backend-deployment-url.com"
