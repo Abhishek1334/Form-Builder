@@ -59,12 +59,7 @@ A modern, interactive form builder application built with React, Node.js, and Mo
     npm install
     ```
 
-    # Install frontend dependencies
-    cd ../client
-    npm install
-    ```
-
-3. **Environment Setup**
+4. **Environment Setup**
 
     **Backend (.env in server directory):**
 
