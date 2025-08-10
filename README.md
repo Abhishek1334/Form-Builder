@@ -6,60 +6,56 @@ A modern, interactive form builder application built with React, Node.js, and Mo
 
 ### 🎯 **Core Functionality**
 
-- **Interactive Form Builder** - Intuitive drag & drop interface
-- **Multiple Question Types** - Categorize, Cloze, and Comprehension questions
-- **Real-time Preview** - Instant form preview as you build
-- **Response Collection** - Public form access with unique IDs
-- **Analytics Dashboard** - Detailed response analysis
+-   **Interactive Form Builder** - Intuitive drag & drop interface
+-   **Multiple Question Types** - Categorize, Cloze, and Comprehension questions
+-   **Real-time Preview** - Instant form preview as you build
+-   **Response Collection** - Public form access with unique IDs
+-   **Analytics Dashboard** - Detailed response analysis
 
 ### 📱 **Question Types**
 
-- **Categorize** - Organize items into categories
-- **Cloze** - Fill-in-the-blank with provided options
-- **Comprehension** - Reading passages with sub-questions (MCQ/MCA/Short text)
+-   **Categorize** - Organize items into categories
+-   **Cloze** - Fill-in-the-blank with provided options
+-   **Comprehension** - Reading passages with sub-questions (MCQ/MCA/Short text)
 
 ### 🎨 **User Experience**
 
-- **Fully Responsive** - Works on all devices
-- **Touch Support** - Optimized for touch interfaces
-- **Real-time Validation** - Instant feedback
-- **Easy Sharing** - One-click form sharing
+-   **Fully Responsive** - Works on all devices
+-   **Touch Support** - Optimized for touch interfaces
+-   **Real-time Validation** - Instant feedback
+-   **Easy Sharing** - One-click form sharing
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
-- MongoDB (local or Atlas)
-- Cloudinary account (for media uploads)
-- Git
+-   Node.js (v18 or higher)
+-   MongoDB (local or Atlas)
+-   Cloudinary account (for media uploads)
+-   Git
 
 ### Installation
 
 1. **Clone the repository**
 
     ```bash
-    git clone https://github.com/Abhishek-Rajoria/form-builder.git
+    git clone https://github.com/yourusername/form-builder.git
     cd form-builder
     ```
 
-2. **Set up environment variables**
-
-    Create `.env` files in both `client` and `server` directories with required configurations.
-
-3. **Install dependencies**
+2. **Install dependencies**
 
     ```bash
     # Install server dependencies
     cd server
     npm install
-    
+
     # Install client dependencies
     cd ../client
     npm install
     ```
 
-4. **Environment Setup**
+3. **Environment Setup**
 
     **Backend (.env in server directory):**
 
@@ -96,71 +92,63 @@ A modern, interactive form builder application built with React, Node.js, and Mo
 
 ```
 form-builder/
-├── client/           # React frontend
-│   ├── public/      # Static files
-│   └── src/         # React components and logic
-├── server/          # Node.js backend
-│   ├── config/     # Configs
-│   ├── controllers/# Route handlers
-│   └── models/     # DB models
-└── .env.*          # Environment configs
+├── client/                    # React frontend
+│   ├── public/               # Static files
+│   ├── src/
+│   │   ├── api/             # API services
+│   │   ├── components/      # React components
+│   │   │   ├── common/      # Shared components
+│   │   │   └── ...          # Question builders
+│   │   ├── hooks/           # Custom hooks
+│   │   ├── pages/           # Page components
+│   │   └── utils/           # Utility functions
+│   ├── package.json
+│   └── vite.config.js
+├── server/                   # Node.js backend
+│   ├── config/              # Configuration files
+│   ├── controllers/         # Route controllers
+│   ├── middlewares/         # Express middlewares
+│   ├── models/              # MongoDB models
+│   ├── routes/              # API routes
+│   ├── services/            # Business logic
+│   └── server.js            # Entry point
+├── vercel.json              # Vercel configuration
+└── README.md
 ```
-
-## 🌐 API Endpoints
-
-### Auth
-- `POST /api/auth/register` - Register
-- `POST /api/auth/login` - Login
-
-### Forms
-- `GET /api/forms` - List forms
-- `POST /api/forms` - Create form
-- `GET /api/forms/:id` - Get form
-- `PUT /api/forms/:id` - Update form
-- `DELETE /api/forms/:id` - Delete form
-
-
-### Environment Variables
-
-**Server (.env)**
-```
-PORT=5000
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
-NODE_ENV=production
-```
-
-**Client (.env)**
-```
-REACT_APP_API_URL=/api
-```
-
-## 🙏 Built With
-- React
-- Node.js
-- Express
-- MongoDB
-- Tailwind CSS
-2. Enter the form ID
-3. View analytics and individual responses
-4. See detailed answer breakdowns
 
 ## 🛠️ Technology Stack
 
 ### Frontend
 
 -   **React 19** - UI framework
--   **Vite** - Build tool
--   **Tailwind CSS** - Styling
--   **React Router** - Navigation
+-   **Vite** - Build tool and dev server
+-   **Tailwind CSS** - Utility-first CSS framework
+-   **React Router** - Client-side routing
 -   **Axios** - HTTP client
--   **Lucide React** - Icons
+-   **Lucide React** - Icon library
+-   **@dnd-kit** - Drag and drop functionality
 
 ### Backend
 
 -   **Node.js** - Runtime environment
 -   **Express.js** - Web framework
--   **MongoDB** - Database
--   **Mongoose** - ODM
--   **Cloudinary** - Image storage
+-   **MongoDB** - NoSQL database
+-   **Mongoose** - MongoDB ODM
+-   **Cloudinary** - Cloud image storage
 -   **Multer** - File upload handling
+
+## 📚 API Documentation
+
+### Forms Endpoints
+
+-   `GET /api/forms` - Get all forms
+-   `POST /api/forms` - Create new form
+-   `GET /api/forms/:id` - Get specific form
+-   `PUT /api/forms/:id` - Update form
+-   `DELETE /api/forms/:id` - Delete form
+
+### Responses Endpoints
+
+-   `POST /api/responses` - Submit form response
+-   `GET /api/responses/:formId` - Get form responses
+-   `GET /api/responses/:formId/analytics` - Get response analytics
