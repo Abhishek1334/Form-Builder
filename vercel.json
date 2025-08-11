@@ -1,8 +1,9 @@
 {
-    "buildCommand": "cd client && npm run vercel-build",
-    "outputDirectory": "client/dist",
-    "installCommand": "cd client && npm install",
+    "buildCommand": "npm run vercel-build",
+    "outputDirectory": "dist",
+    "installCommand": "npm install",
     "framework": "vite",
+    "rootDirectory": "client",
     "env": {
         "VITE_BASE_URL": "https://form-builder-backend.up.railway.app"
     },
