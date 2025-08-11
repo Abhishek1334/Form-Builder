@@ -23,8 +23,8 @@ const corsOptions = {
             'http://localhost:3000', // Alternative local port
             'https://form-builder-three-sand.vercel.app', // Vercel deployment
             'https://form-builder-three-sand.vercel.app/', // Vercel deployment with trailing slash
-            // Add your backend deployment URL here when you deploy it
-            // 'https://your-backend-deployment-url.com'
+            'https://form-builder-backend.up.railway.app', // Railway backend
+            'https://form-builder-backend.up.railway.app/' // Railway backend with trailing slash
         ];
 
         if (allowedOrigins.indexOf(origin) !== -1) {

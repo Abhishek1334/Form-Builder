@@ -9,7 +9,7 @@ const getBaseURL = () => {
     
     // If we're in production (Vercel), use the deployed backend URL
     if (import.meta.env.PROD) {
-        return 'https://your-backend-deployment-url.com'; // Update this with your actual backend URL
+        return 'https://form-builder-backend.up.railway.app';
     }
     
     // Default to localhost for development
@@ -18,8 +18,11 @@ const getBaseURL = () => {
 
 const BASE_URL = getBaseURL();
 
+// Ensure the base URL doesn't end with a slash to prevent double slashes
+const cleanBaseURL = BASE_URL.endsWith('/') ? BASE_URL.slice(0, -1) : BASE_URL;
+
 const api = axios.create({
-    baseURL: `${BASE_URL}/api`,
+    baseURL: `${cleanBaseURL}/api`,
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
